@@ -21,6 +21,11 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <button class="hamburger" aria-label="Toggle Navigation Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </header>
 
     <!-- Hero Section -->
@@ -49,6 +54,17 @@
         <h2>About Us</h2>
         <p>Nkinsela Events specializes in providing high-quality tent rentals across Durban. Whether you need a stretch tent for a wedding or a clear tent for a corporate event, we've got you covered!</p>
     </section>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    });
+</script>
+
 
     <!-- Footer -->
     <footer>
