@@ -73,7 +73,7 @@
 .hero {
     text-align: center;
     padding: 50px 20px;
-    background-color: #333; /* Darker background */
+    background-image: url('path/to/your-image.jpg');*/
     color: #333(5, 5, 5);
 }
 
