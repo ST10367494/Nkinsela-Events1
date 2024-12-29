@@ -51,5 +51,22 @@
         </div>
         <p>&copy; 2024 Nkinsela Events. Created by LihleWeb Designs.</p>
     </footer>
+    
+    <script>
+    // Open Modal with Full Image
+    function openModal(image) {
+        var modal = document.getElementById("modal");
+        var modalImg = document.getElementById("modal-img");
+        modal.style.display = "flex"; // Show the modal
+        modalImg.src = image.src; // Set the source of the modal image to the clicked image
+    }
+
+    // Close Modal when clicking outside the image
+    function closeModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "none"; // Hide the modal
+    }
+</script>
+
 </body>
 </html>
