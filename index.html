@@ -3,48 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Nkinsela Events</title>
+    <title>Nkinsela Events | High-Quality Tent Rentals & Decor in Durban</title>
+    <meta name="description" content="Nkinsela Events - High-quality tent rentals and decor services in Durban. Perfect for weddings, corporate events, and special occasions.">
+    <meta name="keywords" content="Nkinsela Events, tent rentals Durban, decor services Durban, event planning, wedding tents, corporate events">
+    <meta name="author" content="LihleWeb Designs">
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EventVenue",
+      "name": "Nkinsela Events",
+      "description": "High-quality tent rentals and decor services in Durban.",
+      "image": "gallery/NK logo.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Durban",
+        "addressCountry": "ZA"
+      },
+      "url": "https://www.nkinselaevents.com",
+      "telephone": "+27-XXX-XXX-XXXX",
+      "sameAs": [
+        "https://www.facebook.com/nkinselaevents/"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navbar -->
     <header>
         <nav class="navbar">
             <div class="logo-container">
-                <img src="gallery\NK logo.jpg" alt="Nkinsela Events Logo" class="logo">
+                <img src="gallery/NK logo.jpg" alt="Nkinsela Events Logo" class="logo">
                 <span class="site-name">Nkinsela Events</span>
             </div>
             <button class="hamburger" aria-label="Toggle Navigation Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             
             <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="booking.html">Booking</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tent-gallery.html">Gallery</a></li>
+                <li><a href="event-booking.html">Booking</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        
     </header>
 
     <!-- Hero Section -->
     <div class="hero">
         <h1>Welcome to Nkinsela Events</h1>
-        <p>Your trusted partner for decore and tent rentals in Durban</p>
-        <a href="booking.html" class="btn">Make a Booking</a>
+        <p>Your trusted partner for decor and tent rentals in Durban</p>
+        <a href="event-booking.html" class="btn">Make a Booking</a>
     </div>
-</div>
-<section class="gallery">
-    <img src="gallery\WhatsApp Image 2024-11-15 at 19.33.17_d9efa713.jpg" alt="Tent Setup 10">
-    <img src="gallery\WhatsApp Image 2024-11-15 at 19.33.18_9575a375.jpg" alt="Tent Setup 11">
-    <img src="gallery\WhatsApp Image 2024-11-15 at 19.38.07_cfe5125a.jpg" alt="Tent Setup 12">
-</section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Our Event Tent and Decor Setups</h2>
+        <img src="gallery/WhatsApp Image 2024-11-15 at 19.33.17_d9efa713.jpg" alt="Large event tent setup with decor in Durban">
+        <img src="gallery/WhatsApp Image 2024-11-15 at 19.33.18_9575a375.jpg" alt="Modern event tent design in Durban">
+        <img src="gallery/WhatsApp Image 2024-11-15 at 19.38.07_cfe5125a.jpg" alt="Wedding tent setup with elegant decor">
+    </section>
+
     <!-- Video Section -->
     <section class="video-section">
-        <h2>See Our Tent And Decore Combination in Action</h2>
+        <h2>See Our Tent and Decor Combination in Action</h2>
         <video controls>
             <source src="gallery/WhatsApp Video 2024-11-15 at 19.33.15_d31dec14.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -54,8 +79,10 @@
     <!-- Business Info Section -->
     <section class="info-section">
         <h2>About Us</h2>
-        <p>Nkinsela Events specializes in providing high-quality tent rentals across Durban. Whether you need a stretch tent for a wedding or a clear tent for a corporate event, we've got you covered!</p>
+        <p>Nkinsela Events specializes in providing high-quality tent rentals and decor services across Durban. Whether you need a stretch tent for a wedding or a clear tent for a corporate event, we've got you covered!</p>
+        <p>Learn more about our <a href="tent-gallery.html">tent setups and decor services</a>.</p>
     </section>
+
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const hamburger = document.querySelector(".hamburger");
@@ -65,14 +92,13 @@
             navLinks.classList.toggle("active");
         });
     });
-</script>
-
+    </script>
 
     <!-- Footer -->
     <footer>
+
         <div class="social-media">
-            <a href="https://www.facebook.com/nkinselaevents/">Facebook</a> |
-            
+            <a href="https://www.facebook.com/nkinselaevents/">Facebook</a>
         </div>
         <p>&copy; 2024 Nkinsela Events. Created by LihleWeb Designs.</p>
     </footer>
