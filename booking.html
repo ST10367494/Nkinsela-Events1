@@ -33,18 +33,28 @@
         <p>Complete the form below to book your tent:</p>
     </div>
     
-    <form class="booking-form" id="bookingForm">
-        <label for="tent-type">Tent Type:</label>
-        <select id="tent-type" name="tent-type" required>
-            <option value="clear">Clear Tent</option>
-            <option value="stretch">Stretch Tent</option>
-        </select>
-        <label for="tent-size">Tent Size (in meters):</label>
-        <input type="number" id="tent-size" name="tent-size" placeholder="e.g., 10" required>
-        <label for="message">Additional Info:</label>
-        <textarea id="message" name="message" placeholder="Tell us more about your event"></textarea>
-        <button type="button" class="btn" onclick="sendWhatsAppMessage()">Submit</button>
-    </form>
+   <form class="booking-form" id="bookingForm">
+    <label for="tent-type">Tent Type:</label>
+    <select id="tent-type" name="tent-type" required>
+        <option value="clear">Clear Tent</option>
+        <option value="stretch">Stretch Tent</option>
+    </select>
+    
+    <label for="tent-capacity">Number of People Seated Inside:</label>
+    <input type="number" id="tent-capacity" name="tent-capacity" placeholder="e.g., 50" required>
+    
+    <label for="rental-date">Rental Date:</label>
+    <input type="date" id="rental-date" name="rental-date" required>
+    
+    <label for="rental-days">Number of Rental Days:</label>
+    <input type="number" id="rental-days" name="rental-days" placeholder="e.g., 3" required>
+    
+    <label for="message">Additional Info:</label>
+    <textarea id="message" name="message" placeholder="Tell us more about your event"></textarea>
+    
+    <button type="button" class="btn" onclick="sendWhatsAppMessage()">Submit</button>
+</form>
+
     <script>
         function sendWhatsAppMessage() {
             const phoneNumber = "07615862377"; // Replace with your WhatsApp number (without '+' or spaces)
