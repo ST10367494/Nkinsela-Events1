@@ -57,9 +57,11 @@
 
     <script>
         function sendWhatsAppMessage() {
-            const phoneNumber = "07615862377"; // Replace with your WhatsApp number (without '+' or spaces)
+            const phoneNumber = "+27615862377"; // Replace with your WhatsApp number (without '+' or spaces)
             const tentType = document.getElementById("tent-type").value;
-            const tentSize = document.getElementById("tent-size").value;
+            const tentCapacity = document.getElementById("tent-capacity").value;
+            const rentalDate = document.getElementById("rental-date").value;
+            const rentalDays= document.getElementById("rental-days").value;
             const additionalInfo = document.getElementById("message").value || "No additional info provided";
     
             // Construct the WhatsApp message
