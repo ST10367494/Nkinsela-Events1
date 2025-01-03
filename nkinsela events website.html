@@ -11,38 +11,65 @@
     <nav class="navbar">
         <div class="gallery\NK logo.jpg">Nkinsela Events</div>
         <ul class="nav-links">
-            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="booking.html">Booking</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Booking Form -->
+      <!-- Booking Form -->
     <div class="hero">
         <h1>Book Your Tent</h1>
         <p>Complete the form below to book your tent:</p>
     </div>
-    <form class="booking-form" action="#" method="POST">
-        <label for="tent-type">Tent Type:</label>
-        <select id="tent-type" name="tent-type">
-            <option value="clear">Clear Tent</option>
-            <option value="stretch">Stretch Tent</option>
-        </select>
-        <label for="tent-size">Tent Size (in meters):</label>
-        <input type="number" id="tent-size" name="tent-size" placeholder="e.g., 10" required>
-        <label for="message">Additional Info:</label>
-        <textarea id="message" name="message" placeholder="Tell us more about your event"></textarea>
-        <button type="submit" class="btn">Submit</button>
-    </form>
+    
+   <form class="booking-form" id="bookingForm">
+    <label for="tent-type">Tent Type:</label>
+    <select id="tent-type" name="tent-type" required>
+        <option value="clear">Clear Tent</option>
+        <option value="stretch">Stretch Tent</option>
+    </select>
+    
+    <label for="tent-capacity">Number of People Seated Inside:</label>
+    <input type="number" id="tent-capacity" name="tent-capacity" placeholder="e.g., 50" required>
+    
+    <label for="rental-date">Rental Date:</label>
+    <input type="date" id="rental-date" name="rental-date" required>
+    
+    <label for="rental-days">Number of Rental Days:</label>
+    <input type="number" id="rental-days" name="rental-days" placeholder="e.g., 3" required>
+    
+    <label for="message">Additional Info:</label>
+    <textarea id="message" name="message" placeholder="Tell us more about your event"></textarea>
+    
+    <button type="button" class="btn" onclick="sendWhatsAppMessage()">Submit</button>
+</form>
+
+    <script>
+        function sendWhatsAppMessage() {
+            const phoneNumber = "0615862377"; // Replace with your WhatsApp number (without '+' or spaces)
+            const tentType = document.getElementById("tent-type").value;
+            const tentCapacity = document.getElementById("tent-capacity").value;
+            const rentalDate = document.getElementById("rental-date").value;
+            const rentalDays= document.getElementById("rental-days").value;
+            const additionalInfo = document.getElementById("message").value || "No additional info provided";
+    
+            // Construct the WhatsApp message
+            const message = `Hello, I would like to book a tent.%0ATent Type: ${tentType}%0ATent Size: ${tentSize} meters%0AAdditional Info: ${additionalInfo}`;
+            
+            // Construct the WhatsApp URL
+            const whatsappURL = `https://wa.me/+27615862377?text=${message}`;
+    
+            // Redirect to WhatsApp
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+        </script>
 
     <!-- Footer -->
     <footer>
-        <div class="social-media">
-            <a href="#" target="_blank">Facebook</a> |
-            <a href="#" target="_blank">Instagram</a> |
-            <a href="#" target="_blank">Twitter</a>
-        </div>
+        
         <p>&copy; 2024 Nkinsela Events. Created by LihleWeb Designs.</p>
     </footer>
 </body>
