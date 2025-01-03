@@ -1,3 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nkinsela Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="gallery\NK logo.jpg" alt="Nkinsela Events Logo" class="logo">
+                <span class="site-name">Nkinsela Events</span>
+            </div>
+            <button class="hamburger" aria-label="Toggle Navigation Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    <!-- Booking Form -->
+    <div class="hero">
+        <h1>Book Your Tent</h1>
+        <p>Complete the form below to book your tent:</p>
+    </div>
+    
+   <form class="booking-form" id="bookingForm">
+    <label for="tent-type">Tent Type:</label>
+    <select id="tent-type" name="tent-type" required>
+        <option value="clear">Clear Tent</option>
+        <option value="stretch">Stretch Tent</option>
+    </select>
+    
+    <label for="tent-capacity">Number of People Seated Inside:</label>
+    <input type="number" id="tent-capacity" name="tent-capacity" placeholder="e.g., 50" required>
+    
+    <label for="rental-date">Rental Date:</label>
+    <input type="date" id="rental-date" name="rental-date" required>
+    
+    <label for="rental-days">Number of Rental Days:</label>
+    <input type="number" id="rental-days" name="rental-days" placeholder="e.g., 3" required>
+    
+    <label for="message">Additional Info:</label>
+    <textarea id="message" name="message" placeholder="Tell us more about your event"></textarea>
+    
+    <button type="button" class="btn" onclick="sendWhatsAppMessage()">Submit</button>
+</form>
 <button type="button" class="btn" onclick="sendWhatsAppMessage()">Submit</button>
 <script>
     function sendWhatsAppMessage() {
