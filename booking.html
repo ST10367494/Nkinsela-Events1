@@ -1,105 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Nkinsela Events</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo-container">
-                <img src="gallery\NK logo.jpg" alt="Nkinsela Events Logo" class="logo">
-                <span class="site-name">Nkinsela Events</span>
-            </div>
-            <button class="hamburger" aria-label="Toggle Navigation Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="booking.html">Booking</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+<button type="button" class="btn" onclick="sendWhatsAppMessage()">Submit</button>
+<script>
+    function sendWhatsAppMessage() {
+        const phoneNumber = "27735348563"; // Replace with your WhatsApp number (without '+' or spaces)
+        const tentType = document.getElementById("tent-type").value;
+        const tentCapacity = document.getElementById("tent-capacity").value;
+        const rentalDate = document.getElementById("rental-date").value;
+        const rentalDays = document.getElementById("rental-days").value;
+        const additionalInfo = document.getElementById("message").value || "No additional info provided";
 
-    <!-- Booking Form -->
-    <div class="hero">
-        <h1>Book Your Tent</h1>
-        <p>Complete the form below to book your tent:</p>
-    </div>
-    
-   <form class="booking-form" id="bookingForm">
-    <label for="tent-type">Tent Type:</label>
-    <select id="tent-type" name="tent-type" required>
-        <option value="clear">Clear Tent</option>
-        <option value="stretch">Stretch Tent</option>
-    </select>
-    
-    <label for="tent-capacity">Number of People Seated Inside:</label>
-    <input type="number" id="tent-capacity" name="tent-capacity" placeholder="e.g., 50" required>
-    
-    <label for="rental-date">Rental Date:</label>
-    <input type="date" id="rental-date" name="rental-date" required>
-    
-    <label for="rental-days">Number of Rental Days:</label>
-    <input type="number" id="rental-days" name="rental-days" placeholder="e.g., 3" required>
-    
-    <label for="message">Additional Info:</label>
-    <textarea id="message" name="message" placeholder="Tell us more about your event"></textarea>
-    
-    <button type="button" class="btn" onclick="sendWhatsAppMessage()">Submit</button>
-</form>
+        // Construct the WhatsApp message
+        const message = `Hello, I would like to book a tent.%0A`
+                      + `Tent Type: ${tentType}%0A`
+                      + `Number of People Seated Inside: ${tentCapacity}%0A`
+                      + `Rental Date: ${rentalDate}%0A`
+                      + `Number of Rental Days: ${rentalDays}%0A`
+                      + `Additional Info: ${additionalInfo}`;
 
-    <script>
-       function sendWhatsAppMessage() {
-    const phoneNumber = "27615862377"; // Replace with your WhatsApp number (without '+' or spaces)
-    const tentType = document.getElementById("tent-type").value;
-    const tentCapacity = document.getElementById("tent-capacity").value;
-    const rentalDate = document.getElementById("rental-date").value;
-    const rentalDays = document.getElementById("rental-days").value;
-    const additionalInfo = document.getElementById("message").value || "No additional info provided";
+        // Construct the WhatsApp URL
+        const whatsappURL = `https://wa.me/${0735348563}?text=${message}`;
 
-    // Construct the WhatsApp message
-    const message = `Hello, I would like to book a tent.%0A`
-                  + `Tent Type: ${tentType}%0A`
-                  + `Number of People Seated Inside: ${tentCapacity}%0A`
-                  + `Rental Date: ${rentalDate}%0A`
-                  + `Number of Rental Days: ${rentalDays}%0A`
-                  + `Additional Info: ${additionalInfo}`;
+        // Redirect to WhatsApp
+        window.open(whatsappURL, "_blank");
 
-    // Construct the WhatsApp URL
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+        // Show confirmation notice
+        const notice = document.createElement("p");
+        notice.textContent = "Your tent has been booked. Please wait for further instructions on payments via WhatsApp.";
+        notice.style.color = "green";
+        notice.style.marginTop = "10px";
 
-    // Redirect to WhatsApp
-    window.open(whatsappURL, "_blank");
-}
-
-    </script>
-        </script>
-     
-
-    <!-- Footer -->
-    <footer>
-        <div class="social-media">
-            <a href="https://www.facebook.com/nkinselaevents/">Facebook</a> |
-
-        </div>
-        <p>&copy; 2024 Nkinsela Events. Created by LihleWeb Designs.</p>
-    </footer>
-         <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
-
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
-    });
+        // Append the notice after the form
+        const form = document.getElementById("bookingForm");
+        form.reset(); // Clear the form
+        form.parentElement.appendChild(notice);
+    }
 </script>
-</body>
-</html>
