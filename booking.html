@@ -56,23 +56,29 @@
 </form>
 
     <script>
-        function sendWhatsAppMessage() {
-            const phoneNumber = "0615862377"; // Replace with your WhatsApp number (without '+' or spaces)
-            const tentType = document.getElementById("tent-type").value;
-            const tentCapacity = document.getElementById("tent-capacity").value;
-            const rentalDate = document.getElementById("rental-date").value;
-            const rentalDays= document.getElementById("rental-days").value;
-            const additionalInfo = document.getElementById("message").value || "No additional info provided";
-    
-            // Construct the WhatsApp message
-            const message = `Hello, I would like to book a tent.%0ATent Type: ${tentType}%0ATent Size: ${tentSize} meters%0AAdditional Info: ${additionalInfo}`;
-            
-            // Construct the WhatsApp URL
-            const whatsappURL = `https://wa.me/+27615862377?text=${message}`;
-    
-            // Redirect to WhatsApp
-            window.open(whatsappURL, "_blank");
-        }
+       function sendWhatsAppMessage() {
+    const phoneNumber = "27615862377"; // Replace with your WhatsApp number (without '+' or spaces)
+    const tentType = document.getElementById("tent-type").value;
+    const tentCapacity = document.getElementById("tent-capacity").value;
+    const rentalDate = document.getElementById("rental-date").value;
+    const rentalDays = document.getElementById("rental-days").value;
+    const additionalInfo = document.getElementById("message").value || "No additional info provided";
+
+    // Construct the WhatsApp message
+    const message = `Hello, I would like to book a tent.%0A`
+                  + `Tent Type: ${tentType}%0A`
+                  + `Number of People Seated Inside: ${tentCapacity}%0A`
+                  + `Rental Date: ${rentalDate}%0A`
+                  + `Number of Rental Days: ${rentalDays}%0A`
+                  + `Additional Info: ${additionalInfo}`;
+
+    // Construct the WhatsApp URL
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappURL, "_blank");
+}
+
     </script>
         </script>
      
